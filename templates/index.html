@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Add Transaction</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">💰 Finance Tracker</div>
+            <div class="nav-links">
+                <a href="/">Add Transaction</a>
+                <a href="/view">Transactions</a>
+                <a href="/summary">Summary</a>
+            </div>
+        </div>
+    </nav>
+
+    <form method="POST" action="/add" class="home-form">
+        <label>Type:</label>
+        <select name="type">
+            <option>Income</option>
+            <option>Expense</option>
+        </select><br><br>
+
+        <label>Category:</label>
+        <input type="text" name="category" required><br><br>
+
+        <label>Amount:</label>
+        <input type="number" name="amount" step="0.01" required><br><br>
+
+        <label>Description:</label>
+        <input type="text" name="description"><br><br>
+
+        <button type="submit">Add</button>
+    </form>
+</body>
+</html>

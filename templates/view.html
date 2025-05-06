@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>All Transactions</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">💰 Finance Tracker</div>
+            <div class="nav-links">
+                <a href="/">Add Transaction</a>
+                <a href="/view">Transactions</a>
+                <a href="/summary">Summary</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Transactions Table -->
+    <table>
+        <tr>
+            <th>Date</th>
+            <th>Type</th>
+            <th>Category</th>
+            <th>Amount</th>
+            <th>Description</th>
+        </tr>
+        {% for row in transactions %}
+        <tr>
+            <td>{{ row[0] }}</td>
+            <td>{{ row[1] }}</td>
+            <td>{{ row[2] }}</td>
+            <td>{{ row[3] }}</td>
+            <td>{{ row[4] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <!-- Clear Data Button -->
+    <div style="text-align: center; margin-top: 20px;">
+        <form action="/clear" method="POST" onsubmit="return confirm('Are you sure you want to clear all data?');">
+            <button type="submit">Clear All Data</button>
+        </form>
+    </div>
+</body>
+</html>
