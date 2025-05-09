@@ -174,4 +174,95 @@ tr:hover {
     button {
         width: 100%;
     }
+}    
+
+/* General Page Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f0f4f8, #ffffff);
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* Navbar */
+.navbar {
+    background: linear-gradient(90deg, #3b82f6, #06b6d4);
+    padding: 15px 30px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 20px;
+    color: white;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+}
+
+.nav-links a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    font-size: 16px;
+    transition: opacity 0.3s;
+}
+
+.nav-links a:hover {
+    opacity: 0.8;
+}
+
+/* Hamburger Menu Styles */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger span {
+    height: 3px;
+    width: 25px;
+    background: white;
+    margin: 4px 0;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* Mobile Navigation */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        right: 30px;
+        background: linear-gradient(90deg, #3b82f6, #06b6d4);
+        border-radius: 10px;
+        padding: 15px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-links a {
+        margin: 10px 0;
+        font-size: 16px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: flex;
+    }
 }

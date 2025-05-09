@@ -3,6 +3,7 @@ import csv
 import os
 from datetime import datetime
 
+
 app = Flask(__name__)
 FILENAME = "transactions.csv"
 
@@ -15,6 +16,7 @@ if not os.path.exists(FILENAME):
 @app.route('/')
 def index():
     return render_template("index.html")
+
 
 @app.route('/add', methods=['POST'])
 def add_transaction():
